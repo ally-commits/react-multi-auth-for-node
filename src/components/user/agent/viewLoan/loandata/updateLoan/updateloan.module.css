@@ -1,0 +1,25 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content {
+    height: auto;
+    width: 500px;
+    padding: 25px;
+    background-color: azure;
+}
+.content h1 {
+    font-size: 18px;
+    opacity: 0.94;
+}
+.textField {
+    margin: 15px 0px !important;
+}
+.alignContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

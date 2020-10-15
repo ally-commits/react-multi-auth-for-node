@@ -4,8 +4,8 @@ import ViewLoan from './viewLoan/ViewLoan'
 const Agent = (props) => {
     return (
         <div>
-            {props.activeNav == "ADD_LOAN" && <AddLoan user={props.user} />}
-            {props.activeNav == "VIEW_LOAN" && <ViewLoan user={props.user} />}
+            {props.activeNav == "ADD_LOAN" && <AddLoan user={props.user} setActiveNav={(val) => props.setActiveNav(val)}/>}
+            {props.activeNav == "VIEW_LOANS" && <ViewLoan user={props.user} />}
         </div>
     )
 }

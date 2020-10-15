@@ -33,8 +33,7 @@ const Login = (props) => {
             }
         }).then(res => { 
             setUsers(res.data.users)
-        }).catch(err => {
-            console.log(err);
+        }).catch(err => { 
         })
     },[])
 
@@ -79,6 +78,7 @@ const Login = (props) => {
                 }
             }).then(res => {
                 setLoading(false);  
+                props.setActiveNav("VIEW_LOANS")
             }).catch(err => {
                 setLoading(false); 
             })

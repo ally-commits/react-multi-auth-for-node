@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'; 
+
+import Header from './components/Header'
 import './styles/index.css'
 
-ReactDOM.render(
+
+export const globalComp = ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App ref={(appComp) => {window.appComp = appComp}}  />
   </React.StrictMode>,
   document.getElementById('root')
 );

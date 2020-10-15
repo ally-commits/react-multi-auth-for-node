@@ -14,11 +14,9 @@ const ViewLoan = (props) => {
             headers: {
                 "Authorization": props.user.token
             }
-        }).then(res => {
-            console.log(res)
+        }).then(res => { 
             setData(res.data.loans)
-        }).catch(err => {
-            console.log(err);
+        }).catch(err => { 
         })
     },[]); 
 

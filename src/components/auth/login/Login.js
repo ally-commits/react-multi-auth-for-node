@@ -43,8 +43,7 @@ const Login = (props) => {
                 setLoading(false);
                 props.changeAuthStatus(res.data);
             }).catch(err => {
-                setLoading(false);
-                console.log(err);
+                setLoading(false); 
             })
         }
     }

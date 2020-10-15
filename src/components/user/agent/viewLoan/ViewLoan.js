@@ -8,25 +8,27 @@ const ViewLoan = (props) => {
     const [data,setData] = React.useState(false);
 
     React.useEffect(() => {
+        fetchData();
+    },[]);
+
+    const fetchData = () => {
+        setData(false)
         axios({
             method:"get",
             url: "/agent/get-loans",
             headers: {
                 "Authorization": props.user.token
             }
-        }).then(res => {
-            console.log(res)
+        }).then(res => { 
             setData(res.data.loans)
-        }).catch(err => {
-            console.log(err);
+        }).catch(err => { 
         })
-    },[]);
+    }
 
     const isLoading = !data;
     const isEmpty = !isLoading && data.length == 0;
     const showContent = !isLoading && !isEmpty;
-
-    console.log(data)
+ 
     return (
         <div className={styles.container}>
             {isLoading &&
@@ -42,7 +44,7 @@ const ViewLoan = (props) => {
             }
 
             {showContent && 
-                <LoanData data={data} />
+                <LoanData data={data} user={props.user} fetchData={fetchData} />
             }
         </div>
     )

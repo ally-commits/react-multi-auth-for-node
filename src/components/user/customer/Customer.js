@@ -14,19 +14,16 @@ const Customer = (props) => {
             headers: {
                 "Authorization": props.user.token
             }
-        }).then(res => {
-            console.log(res)
+        }).then(res => { 
             setData(res.data.details.loans)
-        }).catch(err => {
-            console.log(err);
+        }).catch(err => { 
         })
     },[]);
 
     const isLoading = !data;
     const isEmpty = !isLoading && data.length == 0;
     const showContent = !isLoading && !isEmpty;
-
-    console.log(data)
+ 
     return (
         <div className={styles.container}>
             {isLoading &&

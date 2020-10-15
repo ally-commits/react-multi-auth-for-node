@@ -28,10 +28,8 @@ const Row = (props) => {
                 loan_id: props.loan._id
             }
         }).then(res => {
-            setOldVal(newVal)
-            console.log(res)
-        }).catch(err => {
-            console.log(err)
+            setOldVal(newVal) 
+        }).catch(err => { 
         });
     }
     return (

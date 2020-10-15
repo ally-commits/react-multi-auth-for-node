@@ -45,9 +45,9 @@ const AddAgent = (props) => {
                 }
             }).then(res => {
                 setLoading(false); 
+                props.setActiveNav("VIEW_USERS")
             }).catch(err => {
-                setLoading(false);
-                console.log(err);
+                setLoading(false); 
             })
         }
     }

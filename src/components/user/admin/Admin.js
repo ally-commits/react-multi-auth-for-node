@@ -7,7 +7,7 @@ import ViewUsers from './viewUsers/ViewUser'
 const Admin = (props) => {
     return (
         <div>
-            {props.activeNav == "ADD_AGENT" && <AddAgent user={props.user} />}
+            {props.activeNav == "ADD_AGENT" && <AddAgent user={props.user} setActiveNav={(val) => props.setActiveNav(val)}/>}
             {props.activeNav == "VIEW_LOANS" && <ViewLoan user={props.user} />}
             {props.activeNav == "VIEW_USERS" && <ViewUsers user={props.user} />}
         </div>

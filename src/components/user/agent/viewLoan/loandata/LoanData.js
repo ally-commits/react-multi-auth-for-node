@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import styles from './load.module.css'
-
+import UpdateLoan from './updateLoan/UpdateLoan'
 
 const useStyles = makeStyles({
   table: {
@@ -31,6 +31,7 @@ const LoadData = (props) => {
                 <TableCell>User Email</TableCell>
                 <TableCell>User Name</TableCell>
                 <TableCell>Created At</TableCell>
+                <TableCell>Action</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>
@@ -47,7 +48,11 @@ const LoadData = (props) => {
                     <TableCell>{loan.amount}</TableCell>
                     <TableCell>{loan.user_id.email}</TableCell>
                     <TableCell>{loan.user_id.name}</TableCell>
-                    <TableCell>{loan.createdAt}</TableCell>
+                    <TableCell>{loan.createdAt.substring(0,10)}</TableCell>
+                    <TableCell>
+                        {loan.status != "REJECTED" &&
+                        <UpdateLoan loan={loan} user={props.user} fetchData={props.fetchData} />}
+                    </TableCell>
                 </TableRow>
             ))}
             </TableBody>

@@ -24,9 +24,9 @@ const User = (props) => {
             >
                 {userType == "CUSTOMER" && <Customer user={props.user} />}
 
-                {userType == "AGENT" && <Agent activeNav={activeNav} user={props.user} />}
+                {userType == "AGENT" && <Agent activeNav={activeNav} user={props.user} setActiveNav={(val) => setActiveNav(val)}/>}
 
-                {userType == "ADMIN" && <Admin activeNav={activeNav} user={props.user} />}
+                {userType == "ADMIN" && <Admin activeNav={activeNav} user={props.user} setActiveNav={(val) => setActiveNav(val)} />}
             </NavBar>
         </React.Fragment>
     );
